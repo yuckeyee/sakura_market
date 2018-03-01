@@ -3,7 +3,7 @@ development:
   host: localhost
   username: root
   password: ka459942
-  database: hello_rails_development
+  database: sakura_market_development
   encoding: utf8
 
 test:
@@ -12,10 +12,10 @@ test:
   username: root
   password: ka459942
   encoding: utf8
-  database: hello_rails_test
+  database: sakura_market_test
 
 production:
   adapter: mysql2
   encoding: unicode
-  database: hello_rails_production
+  database: sakura_market_production
   pool: 5
