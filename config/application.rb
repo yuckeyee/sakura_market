@@ -16,7 +16,7 @@ module SakuraMarket
   class Application < Rails::Application
     config.load_defaults 5.1
     config.generators.system_tests = nil
-
+    config.generators.template_engine = :haml
     config.generators do |g|
       g.stylesheets false
       g.javascripts false
