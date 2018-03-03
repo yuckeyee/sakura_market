@@ -61,6 +61,7 @@
 ## 参考サイト
 - [Rails4.2.0 Bootstrapを導入](https://qiita.com/MasahideTakamura/items/b6d14d580c49ac49811e)
 
-## 疑問
+## 疑問
 - テーブルの正規化はどこまで？
 - devise view　沢山のファイル
+- devise erbをhamlに変える
