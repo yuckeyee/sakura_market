@@ -20,6 +20,7 @@ gem 'binding_of_caller'
 gem 'annotate'
 gem 'devise'
 gem 'faker'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

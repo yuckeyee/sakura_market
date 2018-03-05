@@ -65,3 +65,4 @@
 - テーブルの正規化はどこまで？
 - devise view　沢山のファイル
 - devise erbをhamlに変える
+- kaminariの沢山のファイル
