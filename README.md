@@ -34,6 +34,11 @@
   - 説明文
   - 非表示フラグ
   - 表示順
+- カート（モデルのみ）
+- カートアイテム
+  - 量
+  - カートID
+  - 商品ID
 - 注文
   - 注文ID（注文番号）
   - 注文日時
@@ -60,9 +65,13 @@
 
 ## 参考サイト
 - [Rails4.2.0 Bootstrapを導入](https://qiita.com/MasahideTakamura/items/b6d14d580c49ac49811e)
+- [Rails5でカート機能を作るためのロジックを作ってみた](https://qiita.com/DialBird/items/89ce3a0f25c9dfdb38c1)
 
 ## 疑問
 - テーブルの正規化はどこまで？
 - devise view　沢山のファイル
 - devise erbをhamlに変える
 - kaminariの沢山のファイル
+- timeの扱い
+- カート機能の実装
+
