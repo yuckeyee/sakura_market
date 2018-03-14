@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :setup_cart_item, only: [:add_item, :update_item, :delete_item]
+  before_action :setup_cart_item, only: [:add_item, :delete_item]
 
   def index
     @cart_items = current_cart.cart_items
@@ -10,6 +10,11 @@ class CartsController < ApplicationController
     @cart_item.quantity += params[:quantity].to_i
     @cart_item.save
     redirect_to controller: 'items', action: 'index'
+  end
+
+  def delete_item
+    @cart_item.destroy
+    redirect_to carts_path, flash: {success: '削除しました！'}
   end
 
   private

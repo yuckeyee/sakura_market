@@ -4,9 +4,10 @@
     %table.table
       %thead
         %tr
-          %th{:colspan => "2"} 商品名
+          %th 商品名
           %th 価格
           %th 数量
+          %th 
       %tbody
         = render :partial => "cart_item", :collection => @cart_items
         %tr

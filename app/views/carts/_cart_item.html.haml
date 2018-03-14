@@ -1,8 +1,10 @@
 %tr
-  %td{:colspan => "2"}
+  %td
     %img{:alt => "Card image cap", :src => "http://placehold.jp/100x75.png"}/
     =cart_item.item.name
   %td=number_to_currency(cart_item.item.price, :unit => "￥", :precision => 0)
   %td
     =cart_item.quantity
     点
+  %td
+    = link_to '削除', delete_item_path(item_id: cart_item.item.id), method: :delete, data: { confirm: '本当に削除しますか？' }
