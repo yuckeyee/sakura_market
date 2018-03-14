@@ -66,6 +66,8 @@
 ## 参考サイト
 - [Rails4.2.0 Bootstrapを導入](https://qiita.com/MasahideTakamura/items/b6d14d580c49ac49811e)
 - [Rails5でカート機能を作るためのロジックを作ってみた](https://qiita.com/DialBird/items/89ce3a0f25c9dfdb38c1)
+- [Rails 部分テンプレートの使い方](https://qiita.com/shizuma/items/1c655dadd2e04b3990a8)
+- [Html2Haml](http://html2haml.herokuapp.com/)
 
 ## 疑問
 - テーブルの正規化はどこまで？

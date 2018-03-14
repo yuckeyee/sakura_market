@@ -1,0 +1,20 @@
+.row
+  .col-md-9.mt-2
+    %h4.mb-3 ショピングカート
+    %table.table
+      %thead
+        %tr
+          %th{:colspan => "2"} 商品名
+          %th 価格
+          %th 数量
+      %tbody
+        = render :partial => "cart_item", :collection => @cart_items
+        %tr
+          %td{:colspan => "4", :align => "right"}
+            小計(#{@cart_items.sum(:quantity)}点) #{number_to_currency(CartItem.sum_price(@cart_items), :unit => "￥", :precision => 0)}
+  .col-md-3.mt-2
+    .card.border-secondary.mb-3
+      .card-header
+        %h5 小計(#{@cart_items.sum(:quantity)}点):#{number_to_currency(CartItem.sum_price(@cart_items), :unit => "￥", :precision => 0)}
+      .card-body.text-secondary
+        =button_tag "レジに進む", class: 'btn btn-primary btn-lg btn-block'

@@ -1,0 +1,8 @@
+%tr
+  %td{:colspan => "2"}
+    %img{:alt => "Card image cap", :src => "http://placehold.jp/100x75.png"}/
+    =cart_item.item.name
+  %td=number_to_currency(cart_item.item.price, :unit => "￥", :precision => 0)
+  %td
+    =cart_item.quantity
+    点

@@ -1,10 +1,11 @@
 .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.text-white.bg-success.border-bottom.box-shadow
-  %h5.my-0.mr-md-auto.font-weight-normal さくらマーケット
+  %h5.my-0.mr-md-auto.font-weight-normal
+    = link_to 'さくらマーケット', root_path, class: 'text-white'
   %nav.my-2.my-md-0.mr-md-3
     = link_to 'お買い物', '#', class: 'p-2 text-white'
     - if user_signed_in?
       = link_to '日記を見る', '#', class: 'p-2 text-white'
-      = link_to 'ショッピングカート', '#', class: 'p-2 text-white'
+      = link_to 'ショッピングカート', carts_path, class: 'p-2 text-white'
       = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'
     - else
       = link_to 'ログイン', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'
