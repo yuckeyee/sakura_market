@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310075241) do
+ActiveRecord::Schema.define(version: 20180314101726) do
 
   create_table "cart_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "quantity", default: 0, null: false
@@ -38,6 +38,32 @@ ActiveRecord::Schema.define(version: 20180310075241) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "total", default: 0, null: false
+    t.integer "postage", default: 0, null: false
+    t.datetime "delivery"
+    t.bigint "user_id"
+    t.bigint "payment_id"
+    t.bigint "ship_time_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_id"], name: "index_orders_on_payment_id"
+    t.index ["ship_time_id"], name: "index_orders_on_ship_time_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "method", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ship_times", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "timezone", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -60,4 +86,7 @@ ActiveRecord::Schema.define(version: 20180310075241) do
 
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "items"
+  add_foreign_key "orders", "payments"
+  add_foreign_key "orders", "ship_times"
+  add_foreign_key "orders", "users"
 end
