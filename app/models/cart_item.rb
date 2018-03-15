@@ -17,8 +17,28 @@ class CartItem < ApplicationRecord
   def self.sum_price(cart_items)
     sum = 0
     cart_items.each do |cart_item|
-      sum += cart_item.item.price
+      sum += cart_item.item.price * cart_item.quantity
     end
     sum
+  end
+
+  # ここの書き方はなんかすっきりしない
+  def self.get_delivery_cash(cart_items)
+    sum = self.sum_price(cart_items)
+    case sum
+    when 0..9999
+      300
+    when 10000...29999
+      400
+    when 30000...99999
+      600
+    else
+      1000
+    end
+  end
+
+  def self.get_postage(cart_items)
+    times = cart_items.count < 5 ? 1 : cart_items.count.div(5)
+    times * 600
   end
 end
