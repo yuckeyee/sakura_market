@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314101726) do
+ActiveRecord::Schema.define(version: 20180318012453) do
 
   create_table "cart_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "quantity", default: 0, null: false
@@ -38,10 +38,21 @@ ActiveRecord::Schema.define(version: 20180314101726) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "quantity", default: 0, null: false
+    t.integer "subtotal"
+    t.bigint "item_id"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_order_details_on_item_id"
+    t.index ["order_id"], name: "index_order_details_on_order_id"
+  end
+
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "total", default: 0, null: false
     t.integer "postage", default: 0, null: false
-    t.datetime "delivery"
+    t.date "delivery"
     t.bigint "user_id"
     t.bigint "payment_id"
     t.bigint "ship_time_id"
@@ -86,6 +97,8 @@ ActiveRecord::Schema.define(version: 20180314101726) do
 
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "items"
+  add_foreign_key "order_details", "items"
+  add_foreign_key "order_details", "orders"
   add_foreign_key "orders", "payments"
   add_foreign_key "orders", "ship_times"
   add_foreign_key "orders", "users"
