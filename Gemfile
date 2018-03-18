@@ -23,7 +23,6 @@ gem 'faker'
 gem 'kaminari'
 gem 'simple_form'
 gem 'holiday_jp'
-gem 'rails_admin'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
