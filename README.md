@@ -71,6 +71,7 @@
 - [link_toでPOSTする際にパラメータを渡す方法](https://qiita.com/sugra511/items/3b3235c4798e5b7e8bb5)
 - [[初心者向け] Railsで関連するデータ(親子関係)を保存する方法あれこれ](https://qiita.com/jnchito/items/7f41ff3df900909952db)
 - [holiday_jp](https://github.com/holiday-jp/holiday_jp-ruby)
+- [Rails で namespace を適用する方法](https://qiita.com/ryo-ichikawa/items/2a9159b489a7b16c3dc6)
 
 ## 疑問
 - テーブルの正規化はどこまで？
