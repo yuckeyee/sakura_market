@@ -28,14 +28,16 @@
           %strong=number_to_currency((CartItem.get_delivery_cash(@cart_items) + CartItem.get_postage(@cart_items) + CartItem.sum_price(@cart_items))*1.08, :unit => "￥", :precision => 0)
     .col-md-8.order-md-1
       %h4.mb-3 お届け先住所
-      %form.needs-validation{:novalidate => ""}
-        %p=current_user.name
-        %p=current_user.post_code
-        %p=current_user.address
-        %p= link_to 'お届け先を変更する', '#', method: :delete, data: { confirm: '本当に削除しますか？' }
-        %hr.mb-4/
-        %h4.mb-3 支払い方法
+      %p=current_user.name
+      %p=current_user.post_code
+      %p=current_user.address
+      %p= link_to 'お届け先を変更する', '#', method: :delete, data: { confirm: '本当に削除しますか？' }
+      %hr.mb-4/
+      %h4.mb-3 支払い方法
+      = simple_form_for(Order.new) do |f|
         %p 代金引換（国内配送のみ。代引手数料がかかります。）
+        -# 今は代金引換のみなのでとりあえずこれで対処
+        = f.hidden_field :payment_id, :value => Payment.first.id
         %table.table.table-bordered
           %thead
             %tr
@@ -54,4 +56,13 @@
             %tr
               %td 100,000円〜
               %td 1,000円
+        %hr.mb-4/
+        %h4.mb-3 お届け日
+        .row.mb-2
+          .col-md-6
+            = f.select :delivery, options_for_select(get_workdays), {}, { class: 'form-control'}
+          .col-md-6
+            = f.select :ship_time_id, ShipTime.all.map{|t| [t.timezone, t.id]}, {}, { class: 'form-control'}
+          = f.hidden_field :total, :value => CartItem.get_delivery_cash(@cart_items) + CartItem.get_postage(@cart_items) + CartItem.sum_price(@cart_items)
+          = f.hidden_field :postage, :value => CartItem.get_postage(@cart_items)
         %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"} 注文を確定する

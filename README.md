@@ -69,6 +69,8 @@
 - [Rails 部分テンプレートの使い方](https://qiita.com/shizuma/items/1c655dadd2e04b3990a8)
 - [Html2Haml](http://html2haml.herokuapp.com/)
 - [link_toでPOSTする際にパラメータを渡す方法](https://qiita.com/sugra511/items/3b3235c4798e5b7e8bb5)
+- [[初心者向け] Railsで関連するデータ(親子関係)を保存する方法あれこれ](https://qiita.com/jnchito/items/7f41ff3df900909952db)
+- [holiday_jp](https://github.com/holiday-jp/holiday_jp-ruby)
 
 ## 疑問
 - テーブルの正規化はどこまで？
@@ -79,5 +81,8 @@
 - カート機能の実装
 - 代引き手数料のテーブル
 - 代引き手数料計算のメソッド
-
+- ship_timeなどモデルは必要なのか？テーブルを作っただけで何の処理もない
+- dateなどの標準ライブラリのrequireする場所はどこが適切か
+- モデルの処理　クラス・メソッドからクラスメソッドを呼ぶのはどうなのか？
+- orderのcreateの処理
 

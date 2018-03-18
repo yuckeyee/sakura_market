@@ -9,4 +9,5 @@
 #
 
 class ShipTime < ApplicationRecord
+  has_many :orders
 end
