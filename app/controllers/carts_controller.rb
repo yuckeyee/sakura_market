@@ -8,8 +8,8 @@ class CartsController < ApplicationController
   def add_item
     @cart_item = current_cart.cart_items.build(item_id: params[:item_id].to_i) if @cart_item.blank?
     @cart_item.quantity += params[:quantity].to_i
-    @cart_item.save
-    redirect_to controller: 'items', action: 'index'
+    @cart_item.save!
+    redirect_to root_path, flash: {success: '追加しました！'}
   end
 
   def delete_item
