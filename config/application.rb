@@ -18,6 +18,8 @@ module SakuraMarket
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     config.generators.system_tests = nil
+    config.assets.paths << config.root.join("vendor/assets/javascripts")
+    config.assets.paths << config.root.join("vendor/assets/stylesheets")
     config.generators.template_engine = :haml
     config.generators do |g|
       g.stylesheets false

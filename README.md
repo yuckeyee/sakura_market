@@ -72,6 +72,7 @@
 - [[初心者向け] Railsで関連するデータ(親子関係)を保存する方法あれこれ](https://qiita.com/jnchito/items/7f41ff3df900909952db)
 - [holiday_jp](https://github.com/holiday-jp/holiday_jp-ruby)
 - [Rails で namespace を適用する方法](https://qiita.com/ryo-ichikawa/items/2a9159b489a7b16c3dc6)
+- [RailsのGem Active adminを使用して管理画面を作成する。](https://qiita.com/dawn_628/items/9ce2968963e162930d7a)
 
 ## 疑問
 - テーブルの正規化はどこまで？
