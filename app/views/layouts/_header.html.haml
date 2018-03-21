@@ -3,7 +3,7 @@
     = link_to 'さくらマーケット', root_path, class: 'text-white'
   %nav.my-2.my-md-0.mr-md-3
     - if user_signed_in?
-      = link_to '日記を見る', '#', class: 'p-2 text-white'
+      = link_to 'マイページ', edit_user_registration_path, class: 'p-2 text-white'
       = link_to '注文履歴', orders_path, class: 'p-2 text-white'
       = link_to 'ショッピングカート', carts_path, class: 'p-2 text-white'
       = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary'
