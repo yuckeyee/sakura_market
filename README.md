@@ -73,6 +73,7 @@
 - [holiday_jp](https://github.com/holiday-jp/holiday_jp-ruby)
 - [Rails で namespace を適用する方法](https://qiita.com/ryo-ichikawa/items/2a9159b489a7b16c3dc6)
 - [RailsのGem Active adminを使用して管理画面を作成する。](https://qiita.com/dawn_628/items/9ce2968963e162930d7a)
+- [active_adminのCSS/JavaScript置き場](https://qiita.com/shinichinomura/items/7d34a2068d951c46dfc3)
 
 ## 疑問
 - テーブルの正規化はどこまで？
@@ -87,4 +88,5 @@
 - dateなどの標準ライブラリのrequireする場所はどこが適切か
 - モデルの処理　クラス・メソッドからクラスメソッドを呼ぶのはどうなのか？
 - orderのcreateの処理
+- 管理機能の実装の仕方
 
