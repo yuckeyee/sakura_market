@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   before_action :setup_cart_item, only: [:add_item, :delete_item]
-
+  skip_before_action :authenticate_user!
+  
   def index
     @cart_items = current_cart.cart_items
   end

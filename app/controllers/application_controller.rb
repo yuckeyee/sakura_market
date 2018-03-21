@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, notice: 'アドミン画面へのアクセス権限がありません。'
   end
 
+  PERMISSIBLE_ATTRIBUTES = %i(post_code address)
+
   protected
 
   def authenticate_admin_user!
@@ -22,6 +24,11 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = @cart.id
       @cart
     end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
+    devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
   end
 
 end
