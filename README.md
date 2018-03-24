@@ -74,6 +74,8 @@
 - [Rails で namespace を適用する方法](https://qiita.com/ryo-ichikawa/items/2a9159b489a7b16c3dc6)
 - [RailsのGem Active adminを使用して管理画面を作成する。](https://qiita.com/dawn_628/items/9ce2968963e162930d7a)
 - [active_adminのCSS/JavaScript置き場](https://qiita.com/shinichinomura/items/7d34a2068d951c46dfc3)
+- [FactoryBot（旧FactoryGirl）で関連データを同時に生成する方法いろいろ](https://qiita.com/metheglin/items/47116ccbdb26aa00e034)
+- [Rubyで時間に依存した機能をテストする時便利なgem, Timecop](http://blogs.zealot.co.jp/archives/616)
 
 ## 疑問
 - テーブルの正規化はどこまで？
