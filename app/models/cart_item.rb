@@ -38,7 +38,12 @@ class CartItem < ApplicationRecord
   end
 
   def self.get_postage(cart_items)
-    times = cart_items.count < 5 ? 1 : cart_items.count.div(5)
+    1 if cart_items.count < 5
+    if cart_items.count % 5 == 0
+      times = cart_items.count.div(5)
+    else
+      times = cart_items.count.div(5) + 1
+    end
     times * 600
   end
 end
