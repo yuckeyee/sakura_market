@@ -64,7 +64,6 @@ RSpec.describe CartItem, type: :model do
           item = FactoryBot.create(:item)
           c.cart_items.create(FactoryBot.attributes_for(:cart_item, item_id: item.id))
         end
-        p cart.cart_items
         expect(CartItem.get_postage(cart.cart_items)).to eq 600
       end
       it '商品の5つ場合は送料として600円を返すこと' do
@@ -74,7 +73,6 @@ RSpec.describe CartItem, type: :model do
             c.cart_items.create(FactoryBot.attributes_for(:cart_item, item_id: item.id))
           end
         end
-        p cart.cart_items
         expect(CartItem.get_postage(cart.cart_items)).to eq 600
       end
       it '商品の6つ場合は送料として1200円を返すこと' do
