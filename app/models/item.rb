@@ -15,4 +15,9 @@
 
 class Item < ApplicationRecord
   has_many :order_details
+
+  has_attached_file :image,
+                    styles: { medium: '300x300>', thumb: '100x100>' },
+                    default_url: '/missing.png'
+  validates_attachment :image, content_type: { content_type: %w(image/jpeg image/jpg image/png image/gif) }
 end
