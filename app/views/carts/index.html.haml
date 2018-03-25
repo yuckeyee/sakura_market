@@ -14,13 +14,13 @@
             = render :partial => "cart_item", :collection => @cart_items
             %tr
               %td{:colspan => "4", :align => "right"}
-                小計(#{@cart_items.sum(:quantity)}点) #{number_to_currency(CartItem.sum_price(@cart_items), :unit => "￥", :precision => 0)}
+                小計(#{@cart_items.sum(:quantity)}点) #{number_to_currency(CartItem.sum_price(@cart_items), :format => "%u%n", :unit => "￥")}
       - else
         カートには何も入っていません。
     .col-md-3.mt-2
       - if @cart_items.size != 0
         .card.border-secondary.mb-3
           .card-header
-            %h5 小計(#{@cart_items.sum(:quantity)}点):#{number_to_currency(CartItem.sum_price(@cart_items), :unit => "￥", :precision => 0)}
+            %h5 小計(#{@cart_items.sum(:quantity)}点):#{number_to_currency(CartItem.sum_price(@cart_items), :format => "%u%n", :unit => "￥")}
           .card-body.text-secondary
             =link_to 'レジに進む', new_order_path, { :class => 'btn btn-primary btn-lg btn-block' }

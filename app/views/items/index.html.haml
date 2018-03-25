@@ -5,12 +5,12 @@
         - @items.each do |item|
           .col-md-4
             .card.mb-4.box-shadow
-              %img.card-img-top{:alt => "Card image cap", :src => "http://placehold.jp/100x75.png"}/
+              = image_tag item.image.url, class: "Card image cap"
               .card-body
                 %h5.card-title= item.name
                 %p.card-text= item.description
                 = form_with url: add_item_path do |f|
-                  = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                  = number_to_currency(item.price, :format => "%u%n", :unit => "￥")
                   個数：#{f.select :quantity, (1..10).to_a}
                   #{hidden_field_tag :item_id, item.id}
                   #{f.submit "カートに入れる", class: "btn btn-primary"}

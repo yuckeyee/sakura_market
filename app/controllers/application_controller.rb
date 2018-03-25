@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
   helper_method :current_cart
@@ -8,7 +9,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, notice: 'アドミン画面へのアクセス権限がありません。'
   end
 
-  PERMISSIBLE_ATTRIBUTES = %i(post_code address)
+  # PERMISSIBLE_ATTRIBUTES = %i(post_code address)
 
   protected
 
@@ -27,8 +28,8 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
-    devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
+    devise_parameter_sanitizer.permit(:sign_up)
+    devise_parameter_sanitizer.permit(:account_update, keys: [:post_code, :address])
   end
 
 end

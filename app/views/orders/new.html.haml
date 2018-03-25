@@ -13,25 +13,30 @@
               %h6.my-0=cart_item.item.name
               %small.text-muted
                 数量：#{cart_item.quantity}
-            %span.text-muted=number_to_currency(cart_item.item.price, :unit => "￥", :precision => 0)
+            %span.text-muted=number_to_currency(cart_item.item.price, :format => "%u%n", :unit => "￥")
         %li.list-group-item.d-flex.justify-content-between.lh-condensed
           %div
             %p.my-0 送料
             %small.text-muted 商品5つごとに600円の送料がかかります
-          %span.text-muted=number_to_currency(CartItem.get_postage(@cart_items), :unit => "￥", :precision => 0)
+          %span.text-muted=number_to_currency(CartItem.get_postage(@cart_items), :format => "%u%n", :unit => "￥")
         %li.list-group-item.d-flex.justify-content-between.lh-condensed
           %div
             %p.my-0 手数料
-          %span.text-muted=number_to_currency(CartItem.get_delivery_cash(@cart_items), :unit => "￥", :precision => 0)
+          %span.text-muted=number_to_currency(CartItem.get_delivery_cash(@cart_items), :format => "%u%n", :unit => "￥")
         %li.list-group-item.d-flex.justify-content-between
           %span ご請求額(税込)：
-          %strong=number_to_currency((CartItem.get_delivery_cash(@cart_items) + CartItem.get_postage(@cart_items) + CartItem.sum_price(@cart_items))*1.08, :unit => "￥", :precision => 0)
+          %strong=number_to_currency((CartItem.get_delivery_cash(@cart_items) + CartItem.get_postage(@cart_items) + CartItem.sum_price(@cart_items))*1.08, :format => "%u%n", :unit => "￥")
     .col-md-8.order-md-1
       %h4.mb-3 お届け先住所
       %p=current_user.name
-      %p=current_user.post_code
-      %p=current_user.address
-      %p= link_to 'お届け先を変更する', '#', method: :delete, data: { confirm: '本当に削除しますか？' }
+      - if current_user.address.blank? || current_user.post_code.blank?
+        %p
+          %b 注文を確定するには住所を登録する必要があります。
+        %p= link_to 'お届け先を登録する', edit_user_registration_path
+      - else
+        %p=current_user.post_code
+        %p=current_user.address
+        %p= link_to 'お届け先を変更する', edit_user_registration_path
       %hr.mb-4/
       %h4.mb-3 支払い方法
       = simple_form_for(Order.new) do |f|

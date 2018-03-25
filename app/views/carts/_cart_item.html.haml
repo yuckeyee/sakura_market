@@ -1,8 +1,8 @@
 %tr
   %td
-    %img{:alt => "Card image cap", :src => "http://placehold.jp/100x75.png"}/
+    = image_tag cart_item.item.image.url, class: "Card image cap"
     =cart_item.item.name
-  %td=number_to_currency(cart_item.item.price, :unit => "￥", :precision => 0)
+  %td=number_to_currency(cart_item.item.price, :format => "%u%n", :unit => "￥")
   %td
     =cart_item.quantity
     点
