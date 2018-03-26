@@ -5,13 +5,13 @@ RSpec.describe CartItem, type: :model do
   describe '.sum_price' do
     context 'カートに商品が複数入っている時' do
       it '商品の合計金額を返すこと' do
-        FactoryBot.create_list(:item, 3)
         cart = FactoryBot.create(:cart) do |c|
           3.times do
-            c.cart_items.create(FactoryBot.attributes_for(:cart_item))
+            item = FactoryBot.create(:item, price: 100)
+            c.cart_items.create(FactoryBot.attributes_for(:cart_item, item_id: item.id, quantity: 1))
           end
         end
-        expect(CartItem.sum_price(cart.cart_items)).to eq 1400
+        expect(CartItem.sum_price(cart.cart_items)).to eq 300
       end
     end
 

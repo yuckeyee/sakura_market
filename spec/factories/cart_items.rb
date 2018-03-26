@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :cart_item do
-    sequence(:item_id) { |n| n }
+    association :cart, factory: :cart
+    association :item, factory: :item
     sequence(:quantity) { |n| n }
   end
 end
