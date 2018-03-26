@@ -76,6 +76,7 @@
 - [active_adminのCSS/JavaScript置き場](https://qiita.com/shinichinomura/items/7d34a2068d951c46dfc3)
 - [FactoryBot（旧FactoryGirl）で関連データを同時に生成する方法いろいろ](https://qiita.com/metheglin/items/47116ccbdb26aa00e034)
 - [Rubyで時間に依存した機能をテストする時便利なgem, Timecop](http://blogs.zealot.co.jp/archives/616)
+- [FactoryGirlのattributes_forがassociationを生成してくれない](https://qiita.com/blueplanet/items/82a349f99d0faa925a85)
 
 ## 疑問
 - テーブルの正規化はどこまで？
