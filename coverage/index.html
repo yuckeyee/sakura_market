@@ -21,19 +21,19 @@
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">70.52%</span></span>
+    (<span class="covered_percent"><span class="red">70.18%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.82
+         3.83
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>22</b> files in total.
-    <b>173</b> relevant lines. 
-    <span class="green"><b>122</b> lines covered</span> and
+    <b>171</b> relevant lines. 
+    <span class="green"><b>120</b> lines covered</span> and
     <span class="red"><b>51</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -107,15 +107,15 @@
         <td>20</td>
         <td>16</td>
         <td>4</td>
-        <td>2.1</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#09a70e93cd459f003049f81c0768e970272862a6" class="src_link" title="app/controllers/carts_controller.rb">app/controllers/carts_controller.rb</a></td>
+        <td class="strong"><a href="#4198f4e932f72a3bbefbe83de91ed45c5063ba5d" class="src_link" title="app/controllers/cart_items_controller.rb">app/controllers/cart_items_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>26</td>
-        <td>16</td>
-        <td>16</td>
+        <td>21</td>
+        <td>14</td>
+        <td>14</td>
         <td>0</td>
         <td>1.4</td>
       </tr>
@@ -279,19 +279,19 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="yellow">89.29%</span></span>
+    (<span class="covered_percent"><span class="yellow">88.89%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.53
+         1.5
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>4</b> files in total.
-    <b>56</b> relevant lines. 
-    <span class="green"><b>50</b> lines covered</span> and
+    <b>54</b> relevant lines. 
+    <span class="green"><b>48</b> lines covered</span> and
     <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -315,15 +315,15 @@
         <td>20</td>
         <td>16</td>
         <td>4</td>
-        <td>2.1</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#09a70e93cd459f003049f81c0768e970272862a6" class="src_link" title="app/controllers/carts_controller.rb">app/controllers/carts_controller.rb</a></td>
+        <td class="strong"><a href="#4198f4e932f72a3bbefbe83de91ed45c5063ba5d" class="src_link" title="app/controllers/cart_items_controller.rb">app/controllers/cart_items_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>26</td>
-        <td>16</td>
-        <td>16</td>
+        <td>21</td>
+        <td>14</td>
+        <td>14</td>
         <td>0</td>
         <td>1.4</td>
       </tr>
@@ -1456,14 +1456,14 @@
           <code class="ruby">  def current_cart</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="21">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="8" data-linenumber="21">
+          <span class="hits">8</span>
           
           <code class="ruby">    if session[:cart_id]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="22">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
           <code class="ruby">      @cart = Cart.find(session[:cart_id])</code>
         </li>
@@ -1551,13 +1551,13 @@
 </div>
 
       
-        <div class="source_table" id="09a70e93cd459f003049f81c0768e970272862a6">
+        <div class="source_table" id="4198f4e932f72a3bbefbe83de91ed45c5063ba5d">
   <div class="header">
-    <h3>app/controllers/carts_controller.rb</h3>
+    <h3>app/controllers/cart_items_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1568,55 +1568,55 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class CartsController &lt; ApplicationController</code>
+          <code class="ruby">class CartItemsController &lt; ApplicationController</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :setup_cart_item, only: [:add_item, :delete_item]</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
           <code class="ruby">  skip_before_action :authenticate_user!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def index</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @cart_items = current_cart.cart_items</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  def add_item</code>
+          <code class="ruby">  def index</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @cart_items = current_cart.cart_items</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @cart_item = current_cart.cart_items.find_by(item_id: params[:item_id].to_i)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="10">
@@ -1658,64 +1658,34 @@
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">  def delete_item</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    @cart_item.destroy</code>
+          <code class="ruby">    @cart_item = CartItem.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">    redirect_to carts_path, flash: {success: &#39;削除しました！&#39;}</code>
+          <code class="ruby">    @cart_item.destroy</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    redirect_to carts_path, flash: {success: &#39;削除しました！&#39;}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def setup_cart_item</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="24">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    @cart_item = current_cart.cart_items.find_by(item_id: params[:item_id].to_i)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>

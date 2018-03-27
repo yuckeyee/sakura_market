@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CartsController, type: :controller do
-
+RSpec.describe CartItemsController, type: :controller do
   describe "#index" do
     it "responds successfully" do
       get :index
@@ -14,7 +13,7 @@ RSpec.describe CartsController, type: :controller do
     end
   end
 
-  describe "#add_item" do
+  describe "#create" do
     context "@cart_itemが存在しない時" do
       before do
         @item = FactoryBot.create(:item)
@@ -22,7 +21,7 @@ RSpec.describe CartsController, type: :controller do
 
       it "add a cart_item" do
         expect {
-          post :add_item, params: { item_id: @item.id, quantity: 1 }
+          post :create, params: { item_id: @item.id, quantity: 1 }
         }.to change(CartItem.all, :count).by(1)
       end
     end
@@ -32,19 +31,19 @@ RSpec.describe CartsController, type: :controller do
         @cart_item = FactoryBot.create(:cart_item)
       end
 
-      it "add a order" do
+      it "add a cart_itemr" do
         expect {
-          post :add_item, params: { item_id: @cart_item.item.id, quantity: 1 }, session: { cart_id: @cart_item.cart.id}
+          post :create, params: { item_id: @cart_item.item.id, quantity: 1 }, session: { cart_id: @cart_item.cart.id}
         }.to change{@cart_item.reload.quantity}.by(1)
       end
     end
   end
 
-  describe "#delete_item" do
+  describe "#destroy" do
     it "delete a cart_item" do
       @cart_item = FactoryBot.create(:cart_item)
       expect {
-        delete :delete_item, params: { item_id: @cart_item.item.id }, session: { cart_id: @cart_item.cart.id}
+        delete :destroy, params: { id: @cart_item.id }, session: { cart_id: @cart_item.cart.id}
       }.to change(CartItem.all, :count).by(-1)
     end
   end

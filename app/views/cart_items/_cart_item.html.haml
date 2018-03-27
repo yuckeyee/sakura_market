@@ -7,4 +7,4 @@
     =cart_item.quantity
     点
   %td
-    = link_to '削除', delete_item_path(item_id: cart_item.item.id), method: :delete, data: { confirm: '本当に削除しますか？' }
+    = link_to '削除', cart_item, method: :delete, data: { confirm: '本当に削除しますか？' }

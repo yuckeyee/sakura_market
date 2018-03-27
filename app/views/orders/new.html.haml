@@ -65,7 +65,7 @@
         %h4.mb-3 お届け日
         .row.mb-2
           .col-md-6
-            = f.select :delivery, options_for_select(get_workdays), {}, { class: 'form-control'}
+            = f.select :delivery, options_for_select(Order.get_workdays), {}, { class: 'form-control'}
           .col-md-6
             = f.select :ship_time_id, ShipTime.all.map{|t| [t.timezone, t.id]}, {}, { class: 'form-control'}
           = f.hidden_field :total, :value => CartItem.get_delivery_cash(@cart_items) + CartItem.get_postage(@cart_items) + CartItem.sum_price(@cart_items)

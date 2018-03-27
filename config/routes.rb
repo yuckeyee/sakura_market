@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :new, :create]
   post '/add_item' => 'carts#add_item'
   delete '/delete_item' => 'carts#delete_item'
+  resources :cart_items, only: [:index, :create, :destroy]
 end
