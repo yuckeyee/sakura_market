@@ -42,10 +42,6 @@
         1,
         null
       ],
-      "/Users/kayama/workspace/sakura_market/app/helpers/items_helper.rb": [
-        1,
-        null
-      ],
       "/Users/kayama/workspace/sakura_market/app/admin/items.rb": [
         1,
         1,
@@ -390,12 +386,6 @@
         1,
         null
       ],
-      "/Users/kayama/workspace/sakura_market/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/kayama/workspace/sakura_market/app/models/order_detail.rb": [
         null,
         null,
@@ -410,22 +400,6 @@
         null,
         null,
         null,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/kayama/workspace/sakura_market/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/kayama/workspace/sakura_market/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/kayama/workspace/sakura_market/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
