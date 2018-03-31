@@ -3,11 +3,11 @@
     %h2 ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .form-group
-        = f.label "メールアドレス"
+        = f.label :email
         %br/
         = f.email_field :email, autofocus: true, class: "form-control col-md-5 col-sm", placeholder: "Enter email"
       .form-group
-        = f.label "パスワード"
+        = f.label :password
         %br/
         = f.password_field :password, autocomplete: "off", class: "form-control col-md-5 col-sm", placeholder: "Password"
       - if devise_mapping.rememberable?
