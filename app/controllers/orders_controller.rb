@@ -14,9 +14,8 @@ class OrdersController < ApplicationController
       subtotal = cart_item.item.price * cart_item.quantity
       order.order_details.create!(item_id: cart_item.item_id, quantity: cart_item.quantity, subtotal: subtotal)
     end
-    flash[:success] = "注文が完了しました"
     session[:cart_id] = nil
-    redirect_to root_path
+    redirect_to root_path, flash: {success: '注文が完了しました'}
   end
 
   private

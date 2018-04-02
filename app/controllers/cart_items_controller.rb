@@ -9,8 +9,11 @@ class CartItemsController < ApplicationController
     @cart_item = current_cart.cart_items.find_by(item_id: params[:item_id].to_i)
     @cart_item = current_cart.cart_items.build(item_id: params[:item_id].to_i) if @cart_item.blank?
     @cart_item.quantity += params[:quantity].to_i
-    @cart_item.save!
-    redirect_to root_path, flash: {success: '追加しました！'}
+    if @cart_item.save
+      redirect_to root_path, flash: {success: '追加しました！'}
+    else
+      redirect_to root_path, flash: {success: '失敗しました。'}
+    end
   end
 
   def destroy
