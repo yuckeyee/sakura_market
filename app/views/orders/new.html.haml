@@ -70,4 +70,5 @@
             = f.select :ship_time_id, ShipTime.all.map{|t| [t.timezone, t.id]}, {}, { class: 'form-control'}
           = f.hidden_field :total, :value => CartItem.get_delivery_cash(@cart_items) + CartItem.get_postage(@cart_items) + CartItem.sum_price(@cart_items)
           = f.hidden_field :postage, :value => CartItem.get_postage(@cart_items)
-        %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"} 注文を確定する
+        - if !current_user.address.blank? || !current_user.post_code.blank?
+          %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"} 注文を確定する

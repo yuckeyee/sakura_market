@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Orders", type: :feature do
   scenario "user create a new order" do
-    user = FactoryBot.create(:user)
+    user = FactoryBot.create(:user, post_code: 999999, address: "ruby市rails町")
     FactoryBot.create(:item)
     FactoryBot.create(:payment)
     FactoryBot.create(:cart_item)
@@ -14,7 +14,7 @@ RSpec.feature "Orders", type: :feature do
     click_button "ログイン"
     click_button "カートに入れる", match: :first
     click_link "ショッピングカート"
-    
+
     expect{
       click_link "レジに進む"
       click_button "注文を確定する"
