@@ -1,0 +1,13 @@
+.d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.text-white.bg-success.border-bottom.box-shadow
+  %h5.my-0.mr-md-auto.font-weight-normal
+    = link_to 'さくらマーケット', root_path, class: 'text-white'
+  %nav.my-2.my-md-0.mr-md-3
+    - if user_signed_in?
+      = link_to 'マイページ', edit_user_registration_path, class: 'p-2 text-white'
+      = link_to '注文履歴', orders_path, class: 'p-2 text-white'
+      = link_to 'ショッピングカート', cart_items_path, class: 'p-2 text-white'
+      = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'p-2 text-white'
+    - else
+      = link_to 'お買い物', '#', class: 'p-2 text-white'
+      = link_to 'ショッピングカート', cart_items_path, class: 'p-2 text-white'
+      = link_to 'ログイン', user_session_path, class: 'p-2 text-white'

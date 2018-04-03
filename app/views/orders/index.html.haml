@@ -1,0 +1,20 @@
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      %h4.mt-2.mb-2 注文履歴
+      - if !@orders.blank?
+        - @orders.each do |order|
+          .card.mb-2
+            .card-header
+              注文日:#{order.created_at.strftime('%Y/%m/%d')}
+              合計:#{number_to_currency(order.total, :format => "%u%n", :unit => "￥")}
+            .card-body
+              .row
+                - order.order_details.each do |order_detail|
+                  .col-md-2.mb-2
+                    = image_tag order_detail.item.image.url, :size => "100x80", class: "Card image cap"
+                  .col-md-10.mb-2
+                    %p=order_detail.item.name
+                    %p #{number_to_currency(order_detail.item.price, :format => "%u%n", :unit => "￥")}/数量：#{order_detail.quantity}
+      - else
+        %p 注文履歴はありません

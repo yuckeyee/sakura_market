@@ -1,24 +1,56 @@
-# README
+# さくらマーケット
+## 概要
+生鮮食品を扱うECサイトで、ユーザーが購入した商品について日記を書くなどのコミュニケーションができることが特徴です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発環境
+- Rails 5.1.5
+- Ruby 2.5.0
 
-Things you may want to cover:
+## 業務内容
+- トップページで商品の一覧を確認できる
+- ユーザはユーザ登録する
+- ショッピングカートを通して商品を購入する
+- ５商品ごとに送料がかかる
+- 商品購入の際に送付先を入力する必要はない
+- 決済方法は代引きのみ。手数料がかかる
+- 配送日時を指定できる（時間帯、日にち）
+- 管理者は商品を登録することができる
+- 管理者は商品一覧の画面で表示順を設定できる
+- 管理者はユーザ管理ができる（RUD)
 
-* Ruby version
+## データモデル
+- [ER図](https://github.com/yuki0204/sakura_market/blob/master/erd.pdf)
 
-* System dependencies
 
-* Configuration
+## 参考サイト
+- [Rails4.2.0 Bootstrapを導入](https://qiita.com/MasahideTakamura/items/b6d14d580c49ac49811e)
+- [Rails5でカート機能を作るためのロジックを作ってみた](https://qiita.com/DialBird/items/89ce3a0f25c9dfdb38c1)
+- [Rails 部分テンプレートの使い方](https://qiita.com/shizuma/items/1c655dadd2e04b3990a8)
+- [Html2Haml](http://html2haml.herokuapp.com/)
+- [link_toでPOSTする際にパラメータを渡す方法](https://qiita.com/sugra511/items/3b3235c4798e5b7e8bb5)
+- [[初心者向け] Railsで関連するデータ(親子関係)を保存する方法あれこれ](https://qiita.com/jnchito/items/7f41ff3df900909952db)
+- [holiday_jp](https://github.com/holiday-jp/holiday_jp-ruby)
+- [Rails で namespace を適用する方法](https://qiita.com/ryo-ichikawa/items/2a9159b489a7b16c3dc6)
+- [RailsのGem Active adminを使用して管理画面を作成する。](https://qiita.com/dawn_628/items/9ce2968963e162930d7a)
+- [active_adminのCSS/JavaScript置き場](https://qiita.com/shinichinomura/items/7d34a2068d951c46dfc3)
+- [FactoryBot（旧FactoryGirl）で関連データを同時に生成する方法いろいろ](https://qiita.com/metheglin/items/47116ccbdb26aa00e034)
+- [Rubyで時間に依存した機能をテストする時便利なgem, Timecop](http://blogs.zealot.co.jp/archives/616)
+- [FactoryGirlのattributes_forがassociationを生成してくれない](https://qiita.com/blueplanet/items/82a349f99d0faa925a85)
+- [今日から使える！RSpec 3で追加された8つの新機能](https://qiita.com/jnchito/items/a4a51852c2c678b57868)
 
-* Database creation
+## 疑問
+- テーブルの正規化はどこまで？
+- devise view　沢山のファイル
+- devise erbをhamlに変える
+- kaminariの沢山のファイル
+- timeの扱い
+- カート機能の実装
+- 代引き手数料のテーブル
+- 代引き手数料計算のメソッド
+- ship_timeなどモデルは必要なのか？テーブルを作っただけで何の処理もない
+- dateなどの標準ライブラリのrequireする場所はどこが適切か
+- モデルの処理　クラス・メソッドからクラスメソッドを呼ぶのはどうなのか？
+- orderのcreateの処理
+- 管理機能の実装の仕方
+- 送料取得のクラス・メソッドのテストどこまでやるか
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

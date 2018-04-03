@@ -1,0 +1,10 @@
+%tr
+  %td
+    = image_tag cart_item.item.image.url, class: "Card image cap"
+    =cart_item.item.name
+  %td=number_to_currency(cart_item.item.price, :format => "%u%n", :unit => "￥")
+  %td
+    =cart_item.quantity
+    点
+  %td
+    = link_to '削除', cart_item, method: :delete, data: { confirm: '本当に削除しますか？' }
